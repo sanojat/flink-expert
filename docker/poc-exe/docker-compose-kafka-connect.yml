@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+
+  connect-standalone:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: connect-standalone
+    ports:
+      - 8083:8083
+    volumes:
+      - ./connect-input-file/my-source-file.txt:/tmp/my-source-file.txt

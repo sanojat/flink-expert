@@ -1,0 +1,4 @@
+DROP KEYSPACE IF EXISTS cassandra;
+CREATE KEYSPACE cassandra WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor' : 3} ;
+use cassandra;
+CREATE TABLE waveform_tr_tbl (id TEXT PRIMARY KEY,pid TEXT,patientname TEXT,reference TEXT,mdccode TEXT,effectivedatetime TEXT,effectiveTime bigint,period DOUBLE,dimensions INT,factor DOUBLE,data TEXT,devicereference TEXT ) ;
